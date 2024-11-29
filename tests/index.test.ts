@@ -15,3 +15,7 @@ test('empty string input should throw type error', () => {
 test('simple input should give correct result', () => {
   expect(add('1,2')).toBe(3);
 })
+
+test('input with new lines should give correct outout', () => {
+  expect(add('1\n2,3')).toBe(6);
+})
