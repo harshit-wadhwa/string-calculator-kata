@@ -16,6 +16,11 @@ test('simple input should give correct result', () => {
   expect(add('1,2')).toBe(3);
 })
 
-test('input with new lines should give correct outout', () => {
+test('input with new lines should give correct output', () => {
   expect(add('1\n2,3')).toBe(6);
 })
+
+test('change delimeter input should give correct output', () => {
+  expect(add('//;\n1;2')).toBe(3);
+})
+
