@@ -11,3 +11,7 @@ test('empty string input should throw type error', () => {
     expect(error).toBeInstanceOf(TypeError);
   }
 });
+
+test('simple input should give correct result', () => {
+  expect(add('1,2')).toBe(3);
+})
