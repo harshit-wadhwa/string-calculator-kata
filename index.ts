@@ -2,10 +2,14 @@ function extractNegativeNos(arr: Array<number>) {
   return arr.filter(el => el < 0).toString()
 }
 
+function isDelimeterAvailableInInputString(str: string): boolean {
+  return str.startsWith('//')
+}
+
 function add(numbers: string): number {
   if (!numbers) throw new TypeError()
   let delimeter = ','
-  if (numbers.startsWith('//')) {
+  if (isDelimeterAvailableInInputString(numbers)) {
     delimeter = numbers[2] 
     numbers = numbers.slice(4)
   }
