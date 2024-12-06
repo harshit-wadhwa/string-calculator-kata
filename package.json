@@ -7,7 +7,7 @@
   "scripts": {
     "start": "tsc && node dist/index.js",
     "lint": "eslint . --ext .ts",
-    "test": "jest --watch"
+    "test": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",

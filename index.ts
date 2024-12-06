@@ -1,3 +1,7 @@
+function extractNegativeNos(arr: Array<number>) {
+  return arr.filter(el => el < 0).toString()
+}
+
 function add(numbers: string): number {
   if (!numbers) throw new TypeError()
   let delimeter = ','
@@ -7,13 +11,7 @@ function add(numbers: string): number {
   }
   const regex = new RegExp(`[${delimeter}\\n]`)
   const arr: Array<number> = numbers.split(regex).map(num => parseInt(num))
-  let negNos = ''
-  for (const el of arr) {
-    if (el < 0) {
-      if (negNos) negNos += ','
-      negNos += el
-    }
-  }
+  const negNos = extractNegativeNos(arr)
   if (negNos) throw new TypeError(`negative numbers not allowed ${negNos}`)
   return arr.reduce((acc, curr) => acc + curr, 0)
 }
